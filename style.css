@@ -15,6 +15,7 @@ html, body {
 	padding: 0;
 	height: 100%;
 	width: 100%;
+	overflow: hidden;
 }
 body {
 	font-family: 'Roboto';
@@ -29,48 +30,28 @@ body {
 	min-height: 100%;
 	min-width: 100%;
 }
-
-.title-box {
-	background-color: rgba(255,255,255,0.7);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	width: 40vw;
-	height: 15vh;
-	-webkit-box-shadow: 0 10px 8px -6px rgba(0,0,0,0.5);
-	animation: title-box-anim 0.5s ease-in-out;
-}
-@keyframes title-box-anim {
-	0% {
-		width: 0;
-		opacity: 0;
-	}
-	100% {
-		width: 40vw;
-		opacity: 1;
-	}
-}
 .title {
 	font-family: 'squealer';
 	text-transform: uppercase;
-	font-size: 9vh;
+	font-size: 10vh;
 	letter-spacing: 5px;
-	animation: title-anim 0.75s ease-in;
 	z-index: 1;
+	color: #fff;
+	border: 3px solid #ffffff;
+	padding: 10px 15px 10px 15px;
 }
-@keyframes title-anim {
-	0% {
-		opacity: 0;
-	}
-	30% {
+.title.fade {
+	animation: fadeOut 2s ease-in-out;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+@keyframes fadeOut {
+	99% {
+		margin-top: 300px;
 		opacity: 0;
 	}
 	100% {
-		opacity: 1;
+		display: none;
 	}
 }
 #nav {
@@ -78,20 +59,17 @@ body {
 	position: absolute;
 	display: flex;
 	top: 3vh;
-	height: 5vh;
-	width: 40vw;
 }
 #nav span {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 5vh;
+	min-height: 5vh;
 	cursor: pointer;
-	width: 13.33vw;
 	text-transform: uppercase;
 	-webkit-transition: 0.25s ease-in-out;
 	letter-spacing: 2px;
-	font-size: 100%;
+	font-size: 1em;
 }
 #nav span:hover {
 	background-color: rgba(255,255,255,1);
@@ -104,11 +82,64 @@ body {
 #nav span:nth-child(even) {
 	background-color: rgba(0,0,0,0.7);
 	color: #fff;
-}
-.box {
+}	
+.desc-box, .rules-box {
 	background-color: rgba(255,255,255,0.7);
-	min-height: 40vh;
-	width: 50vw;
+	display: flex;
+	justify-content: center;
+	align-items: top;
+	position: absolute;
+	margin-top: 300px;
+	opacity: 0;
+	min-height: 60vh;
+	min-width: 40vw;
 	text-align: center;
-	padding: 5px;
+	display: none;
 }
+.desc-box h1, .rules-box h1 {
+	text-transform: uppercase;
+}
+.desc-box p, .rules-box p, .rules-box ul {
+	/*padding: 0 20px 0 20px;*/
+	width: 65%;
+	text-align: left;
+	left: 20px;
+	position: absolute;
+}
+.rules-box ul li {
+	margin: 0;
+	padding: 0;
+}
+.desc-box img, .rules-box img {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	max-height: 100%;
+	max-width: 35%;
+	text-align: center;
+}
+.oasislogo {
+	position: absolute;
+	bottom: 10px;
+	opacity: 0;
+	display: flex;
+	align-items: center;
+	color: #fff;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: 0.5s ease-in-out;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-o-transition: 0.5s ease-in-out;
+}
+.oasislogo h2 {
+	float: right;
+	margin-left: 10px;
+}
+.oasislogo img {
+	max-width: 40px;
+	cursor: pointer;
+}
+/*.oasislogo:hover {
+	opacity: 1 !important;
+}*/
