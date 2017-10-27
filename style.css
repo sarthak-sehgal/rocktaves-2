@@ -33,7 +33,7 @@ body {
 .title {
 	font-family: 'squealer';
 	text-transform: uppercase;
-	font-size: 10vh;
+	font-size: 10vmin;
 	letter-spacing: 5px;
 	z-index: 1;
 	color: #fff;
@@ -64,7 +64,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 5vh;
+	min-height: 5vmin;
 	cursor: pointer;
 	text-transform: uppercase;
 	-webkit-transition: 0.25s ease-in-out;
@@ -92,19 +92,36 @@ body {
 	margin-top: 300px;
 	opacity: 0;
 	min-height: 60vh;
-	min-width: 40vw;
+	width: 40vw;
 	text-align: center;
 	display: none;
 }
 .desc-box h1, .rules-box h1 {
 	text-transform: uppercase;
+	height: 20%;
+	overflow: auto;
+	align-content: center;
+	margin-bottom: 0;
+}
+.desc-content {
+	width: 100%;
 }
 .desc-box p, .rules-box p, .rules-box ul {
 	/*padding: 0 20px 0 20px;*/
 	width: 65%;
+	top: 25%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	display: block;
+	overflow: auto;
 	text-align: left;
 	left: 20px;
-	position: absolute;
+	height: 60%;
+}
+.rules-box ul {
+	width: 60%;
+	padding-left: 30px;
 }
 .rules-box ul li {
 	margin: 0;
@@ -118,9 +135,16 @@ body {
 	max-width: 35%;
 	text-align: center;
 }
-.oasislogo {
+#oasislink {
 	position: absolute;
-	bottom: 10px;
+	bottom: 5px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: center;
+	text-decoration: none;
+}
+.oasislogo {
 	opacity: 0;
 	display: flex;
 	align-items: center;
@@ -140,6 +164,19 @@ body {
 	max-width: 40px;
 	cursor: pointer;
 }
-/*.oasislogo:hover {
-	opacity: 1 !important;
-}*/
+
+@media (max-aspect-ratio: 4/3) and (orientation: portrait) {
+	.desc-box, .rules-box {
+		min-height: 40vh;
+		min-width: 80vw;
+	
+	}
+	.desc-box h1, .rules-box h1 {
+		height: 10%;
+	}
+	.desc-box p, .rules-box p, .rules-box ul {
+		top: 15%;
+		height: 70%;
+		overflow-y: scroll;
+	}
+}
