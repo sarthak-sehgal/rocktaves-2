@@ -98,8 +98,7 @@ body {
 	height: 20%;
 	overflow: auto;
 	align-content: center;
-	margin-bottom: 0;
-    font-size: 5vh; 
+	margin-bottom: 0; 
 }
 .desc-content {
 	width: 100%;
