@@ -99,6 +99,7 @@ body {
 	overflow: auto;
 	align-content: center;
 	margin-bottom: 0;
+    font-size: 5vh; 
 }
 .desc-content {
 	width: 100%;
@@ -115,6 +116,7 @@ body {
 	text-align: left;
 	left: 20px;
 	height: 60%;
+    font-size: 2.5vh;
 }
 .rules-box ul {
 	width: 60%;
@@ -166,7 +168,7 @@ body {
 	.box {
 		min-height: 40vh;
 		min-width: 80vw;
-	
+
 	}
 	.box h1 {
 		height: 10%;
